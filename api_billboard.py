@@ -1,28 +1,27 @@
 import sys
 import billboard
-scope = 'user-library-read'
-song_names = []
+import datetime
 
 chart = billboard.ChartData('hot-100')
-print(type(chart))
-print(len(chart))
+print(type(chart.previousDate))
+#print(datetime.strptime(chart.previousDate))
 
-#print (chart)
+#print(type(song.title)) - str
 
-song = chart[0]
-#print(song.title) - Truth Hurts
-#print(song.artist) - Lizzo
+#while chart.previousDate:
 
-print(type(song.title))
+total_chart = []
+total_chart.append(chart)
+print(total_chart)
+
+for i in range(3):
+    chart_1 = billboard.ChartData('hot-100', chart.previousDate)
+    total_chart.append(chart_1)
+
+print(total_chart)
 
 
 
-'''
-def songs_from_chart(chart):
-	song = []
-	for i in chart:
-		song
-'''
 
 def dict_from_chart(chart,dictionary):
 	for i in range (len(chart)):
