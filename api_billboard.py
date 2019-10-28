@@ -5,7 +5,7 @@ import pandas as pd
 import csv
 
 
-start_date = '2015-04-25'
+start_date = '2019-02-16'
 chart = billboard.ChartData('hot-100', start_date)
 #print(chart)
 #print(type(chart.previousDate))
@@ -52,9 +52,11 @@ dictionary = {}
 dict_from_total_chart(total_chart,dictionary)
 print(len(dictionary))
 
+#print(billboard.charts())
+
 #df = pd.DataFrame(dictionary,index=[0])
 #df.to_csv("billboard_data.csv")
-with open('billboard_data_7.csv', 'w') as f:  # Just use 'w' mode in 3.x
+with open('billboard_data_2019.csv', 'w') as f:  # Just use 'w' mode in 3.x
     w = csv.DictWriter(f, dictionary.keys())
     w.writeheader()
     w.writerow(dictionary)
